@@ -1,0 +1,9 @@
+aweful:bad#nice#good
+bad:aweful#nice#good
+bye:see you#hi#hello#greetings
+good:nice#bad#awful
+greetings:hi:hello#bye#see you
+hello:hi:greetings#bye#see you
+hi:hello:greetings#bye#see you
+nice:good#bad#awful
+see you:bye#hi#hello#greetings

@@ -1,0 +1,6 @@
+﻿  Data_structures_project_dictionary.cpp
+C:\Users\Lenovo\Desktop\CCE\data\Data_structures_project_dictionary\Data_structures_project_dictionary\Data_structures_project_dictionary.cpp(88,35): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\Desktop\CCE\data\Data_structures_project_dictionary\Data_structures_project_dictionary\Data_structures_project_dictionary.cpp(93,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\Desktop\CCE\data\Data_structures_project_dictionary\Data_structures_project_dictionary\Data_structures_project_dictionary.cpp(95,39): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\Desktop\CCE\data\Data_structures_project_dictionary\Data_structures_project_dictionary\Data_structures_project_dictionary.cpp(107,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Data_structures_project_dictionary.vcxproj -> C:\Users\Lenovo\Desktop\CCE\data\Data_structures_project_dictionary\x64\Debug\Data_structures_project_dictionary.exe
