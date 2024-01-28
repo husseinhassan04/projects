@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel to Italy!</title>
+	<link rel="icon" type="image/x-icon" href="../photos/logo_hhf.svg">
+	<meta charset="utf-8">
+	<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+	<link rel="stylesheet" type="text/css" href="../styleOfBooking.css">
+</head>
+<body>
+	<div>
+<label class="back-button">
+	<a href="../index.html">
+	<button class="go-back">
+		
+	</button></a>
+</label>
+</div>
+<h1>Travel to Rome Italy!</h1>
+<h2>Travel plan:</h2>
+<br>
+<h3>Visit those amazing spots:</h3>
+<div class="photos">
+	<figure>
+		<img src="../photos/collosseum.webp" class='photo'>
+		<figcaption>Collosseum</figcaption>
+	</figure><figure>
+		<img src="../photos/fountain.webp" class='photo'>
+		<figcaption>Trevi Fountain</figcaption>
+	</figure><figure>
+		<img src="../photos/castel.jpg" class='photo'>
+		<figcaption>Castel Sant'Angelo</figcaption>
+	</figure>
+</div>
+<!-- <div class="tayara">
+	<div >
+
+		<img src="../photos/tayara.png">
+	</div>
+</div> -->
+<div class="booking-body">
+	<div class="booking">
+		<h1>Book now!</h1>
+		<form action="thanks.html">
+		<input type="text" placeholder="First Name" required autocomplete="off">
+		<input type="text" placeholder="Last Name" required autocomplete="off">
+		<select id="travel_class" required="">
+			<option value="" selected disabled hidden>Select an Option</option>
+			<option>Economy class</option>
+			<option>Premium Economy class</option>
+			<option>Business class</option>
+			<option>First class</option>
+		</select>
+		<select id="seat" required="">
+			<option value="" selected disabled hidden>Select your seat:</option>
+		</select>
+		<input type="submit" value="Submit" onclick="price()">
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="../script.js"></script>
+</body>
+</html>

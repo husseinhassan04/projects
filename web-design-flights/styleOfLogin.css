@@ -1,0 +1,131 @@
+	*{
+		
+		margin:0;
+		padding:0;
+		box-sizing:content-box;
+		text-decoration: none;
+		list-style: none;
+	}
+	body{
+		background-color: #0082e6;
+	}
+	.column1{
+		color:blue;
+		font-size: 20px;
+		font-family:Georgia,serif;
+	}
+	input{
+		border-width: 1px;
+		border-color:blue;
+		border-radius:5px;
+		margin:10px;
+	}
+	
+	input[type=submit]{
+	background-color: silver;
+	color:blue;
+	padding: 10px;
+	border: none;
+	box-shadow: grey 2px;
+	}
+
+	input[type=submit]:hover{
+		background-color: blue;
+		color:silver;
+		cursor: pointer;
+	}
+	.submit_button{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	#container{
+		display: flex;
+		justify-content: center;
+		align-content: center;
+
+	}
+	div form{
+		border-style: dashed;
+		border-radius: 5px;
+		border-color: blue;
+		border-width: 5px;
+		box-shadow: 10px;
+		background-color: white;
+	}
+	#top{
+		color:white;
+		text-align: center;
+		padding: 50px;
+	}
+	#logo{
+	margin-left:20px;
+	margin-top:10px;
+	height:80px;
+	width:150px;
+}
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #0082e6;
+	height:100px;
+	font-family: 'Borel', cursive;
+}
+
+#login{
+	display:inline;
+}
+#login p {
+	border-width: 2px;
+	border-color: blue;
+	border-style: solid;
+	border-radius: 5px;
+	margin:5px;
+	text-align: center;
+	padding: 5px;
+	background-color: white;
+	color:blue;
+}
+#login p:hover{
+	border: none;
+	background-color:grey;
+	color:white;
+}
+nav ul li{
+	display:inline-block;
+	margin-right: 10px;
+	color:white;
+}
+footer{
+	background-color: #0082e6;
+	height:100px;
+	font-family: 'Borel', cursive;
+	position:relative;
+	bottom:0;
+	width:100%;
+}
+#call{
+	margin:40px;
+	float:right;
+	color:white;
+}
+#insta{
+	margin-left:40px;
+	margin-top:40px;
+	float:left;
+	color:white;
+}
+footer p{
+	text-align: center;
+	color:white;
+	margin-top:25px;
+	font-size:35px;
+}
+
+a:visited,a:link{
+	color:white;
+}
+a:hover,a:active{
+	color:#D3D3D3;
+}
