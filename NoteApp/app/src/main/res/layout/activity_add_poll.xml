@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPostActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#18273C"
+        android:padding="10dp"
+        >
+
+        <EditText
+            android:id="@+id/text"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/desc_bg"
+            android:hint="Text"
+            android:textColorHint="#18273C"
+            android:paddingLeft="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:maxLength="50"
+            android:inputType="text"
+            android:textColor="#18273C"
+
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text"
+            android:id="@+id/opt1_container"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option1:"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                />
+
+            <EditText
+                android:id="@+id/option1"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/desc_bg"
+                android:hint="opt1"
+                android:textColor="@color/black"
+                android:textColorHint="#18273C"
+                android:paddingLeft="10dp"
+                android:layout_marginStart="20dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opt1_container"
+            android:id="@+id/opt2_container"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option2:"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+
+                />
+
+            <EditText
+                android:id="@+id/option2"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/desc_bg"
+                android:hint="opt2"
+                android:textColor="@color/black"
+                android:textColorHint="#18273C"
+                android:paddingLeft="10dp"
+                android:layout_marginStart="20dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opt2_container"
+            android:id="@+id/opt3_container"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option3:"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                />
+
+            <EditText
+                android:id="@+id/option3"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/desc_bg"
+                android:hint="opt3"
+                android:textColor="@color/black"
+                android:textColorHint="#18273C"
+                android:paddingLeft="10dp"
+                android:layout_marginStart="20dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opt3_container"
+            android:id="@+id/opt4_container"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option4:"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                />
+
+            <EditText
+                android:id="@+id/option4"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/desc_bg"
+                android:hint="opt4"
+                android:textColor="@color/black"
+                android:textColorHint="#18273C"
+                android:paddingLeft="10dp"
+                android:layout_marginStart="20dp"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opt4_container"
+            android:layout_marginTop="20dp"
+            >
+            <ImageButton
+                android:id="@+id/cancel_button"
+                android:layout_width="57dp"
+                android:layout_height="50dp"
+                android:src="@drawable/cancel_button"
+                android:scaleType="centerCrop"
+
+                android:background="#00F8FBFD"
+                android:layout_marginStart="@dimen/margin_add_Post_buttons"/>
+
+            <ImageButton
+                android:id="@+id/accept_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#00F8FBFD"
+                android:scaleType="centerCrop"
+                android:src="@drawable/accept_button"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_add_Post_buttons"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

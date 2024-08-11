@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_views_date">400dp</dimen>
+    <dimen name="margin_add_Post_buttons">300dp</dimen>
+    <dimen name="text_size">18sp</dimen>
+    <dimen name="title_size">26sp</dimen>
+    <dimen name="username_size">32sp</dimen>
+    <dimen name="image_width">700dp</dimen>
+    <dimen name="description_width">900dp</dimen>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp"
+    android:backgroundTint="@color/app_color"
+    android:background="@android:color/transparent"
+    >
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <Button
+        android:id="@+id/view_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="View Image"
+        android:textColor="#FF051C2C"
+        android:background="@drawable/custom_bottom_sheet_background"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <Button
+        android:layout_marginTop="5dp"
+        android:id="@+id/change_image_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Select Image from Camera"
+        android:textColor="@color/app_color"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+        android:background="@drawable/custom_bottom_sheet_background"/>
+
+    <Button
+        android:layout_marginTop="5dp"
+        android:id="@+id/change_image_storage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Select Image from Files"
+        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+        android:background="@drawable/custom_bottom_sheet_background"
+        />
+</LinearLayout>
+</androidx.cardview.widget.CardView>

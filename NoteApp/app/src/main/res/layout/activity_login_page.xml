@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/login_page_main"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/login_bg"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/app_icon"
+            android:background="#00FFFFFF"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="45dp"
+        android:textColor="#FFFFFF"
+        android:text="NoteApp"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"
+        />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/username"
+        android:textColor="@color/black"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/desc_bg"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:hint="username"
+        android:textColorHint="@color/black"
+
+        />
+    <EditText
+        android:id="@+id/password"
+        android:layout_below="@id/username"
+        android:textColor="@color/black"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:inputType="textPassword"
+        android:background="@drawable/desc_bg"
+        android:gravity="center"
+        android:hint="password"
+        android:textColorHint="@color/black"
+
+        />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_marginTop="10dp"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/login_button"
+        android:text="Login"
+        android:textStyle="bold"
+        />
+
+<!--    <Button-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:id="@+id/gmail"-->
+<!--        android:layout_below="@id/login_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:text="login with Gmail"-->
+<!--        android:padding="15dp"-->
+
+<!--        />-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_btn"
+        android:layout_centerHorizontal="true">
+    <com.google.android.gms.common.SignInButton
+        android:layout_marginTop="10dp"
+        android:id="@+id/gmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/signup_btn"
+        android:background="@drawable/signup_btn"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="85dp"
+        android:layout_height="50dp"
+        android:text="Sign Up"
+        android:textColor="#ffffff"
+        />
+    </LinearLayout>
+</RelativeLayout>

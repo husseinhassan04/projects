@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+    <TextView
+        android:id="@+id/day"
+        android:textColor="#DDDCDC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="10dp"
+        android:background="@drawable/time_bg"
+        android:padding="4dp"
+        />
+
+    <!-- Message content -->
+    <LinearLayout
+
+        android:layout_below="@id/day"
+        android:id="@+id/messageContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sender_message_background"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        >
+
+        <TextView
+            android:id="@+id/messageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:padding="8dp"/>
+
+
+    </LinearLayout>
+
+
+    <!-- Timestamp -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/messageContainer">
+    <TextView
+        android:id="@+id/messageTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="9sp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"/>
+    <TextView
+        android:paddingLeft="5dp"
+        android:id="@+id/read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="READ"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="1dp"
+        android:visibility="gone"
+        android:textSize="8dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

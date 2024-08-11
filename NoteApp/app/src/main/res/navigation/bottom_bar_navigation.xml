@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_bar_navigation"
+    app:startDestination="@+id/home_fragment">
+
+    <fragment android:id="@+id/home_fragment" tools:layout="@layout/fragment_home" android:label="Home Page" />
+
+    <fragment android:id="@+id/map_fragment" tools:layout="@layout/fragment_map" android:label="Map Page"/>
+
+</navigation>

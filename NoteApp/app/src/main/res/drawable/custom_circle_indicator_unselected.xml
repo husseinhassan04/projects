@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#808080"/> <!-- Change to the color you want for the unselected indicator -->
+    <corners android:radius="5dp"/>
+</shape>
