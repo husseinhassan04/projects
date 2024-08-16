@@ -14,32 +14,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="vertical">-->
-
-<!--            <WebView-->
-<!--                android:id="@+id/web_view"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="800dp" />-->
-
-<!--            <WebView-->
-<!--                android:id="@+id/web_view2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="800dp" />-->
-
-<!--            <WebView-->
-<!--                android:id="@+id/web_view3"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="800dp" />-->
-
-<!--        </LinearLayout>-->
-<!--    </ScrollView>-->
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"

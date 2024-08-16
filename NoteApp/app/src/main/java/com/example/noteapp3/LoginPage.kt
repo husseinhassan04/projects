@@ -4,6 +4,9 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -54,6 +57,8 @@ class LoginPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_page)
 
+
+
         Log.d(TAG, "onCreate() called")
         fetchProfiles()
 
@@ -80,10 +85,30 @@ class LoginPage : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        val signInButton: SignInButton = findViewById(R.id.gmail)
-        signInButton.setOnClickListener {
+        val googleSignInButton:Button = findViewById(R.id.gmail)
+
+
+        // Load the google icon to the button
+        val originalDrawable: Drawable? = ContextCompat.getDrawable(this, R.drawable.google_icon)
+
+        originalDrawable?.let {
+            // Convert Drawable to Bitmap
+            val bitmap = (it as BitmapDrawable).bitmap
+
+            // Resize the Bitmap
+            val resizedBitmap = Bitmap.createScaledBitmap(bitmap, 48, 48, false) // Set the width and height as needed
+
+            // Convert Bitmap back to Drawable
+            val resizedDrawable = BitmapDrawable(resources, resizedBitmap)
+
+            // Set the resized drawable to the button
+            googleSignInButton.setCompoundDrawablesWithIntrinsicBounds(resizedDrawable, null, null, null)
+        }
+        googleSignInButton.setOnClickListener {
             gmailSignIn()
         }
+
+
 
         signUpButton = findViewById(R.id.signup_btn)
         signUpButton.setOnClickListener {

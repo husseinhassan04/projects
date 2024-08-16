@@ -253,6 +253,8 @@
         android:id="@+id/commentInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/app_color"
+        android:padding="3dp"
         android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -265,6 +267,7 @@
             android:layout_height="wrap_content"
             android:layout_toStartOf="@+id/sendButton"
             android:hint="Add a comment"
+            android:background="@drawable/add_comment_box"
             android:inputType="textMultiLine"
             android:maxLines="3"
             android:scrollbars="vertical"
@@ -274,12 +277,14 @@
         <!-- Send Button -->
         <ImageButton
             android:id="@+id/sendButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="46dp"
+            android:layout_height="50dp"
+            android:paddingHorizontal="3dp"
             android:layout_alignBottom="@+id/newComment"
             android:layout_alignParentEnd="true"
             android:background="#00FFFFFF"
-            android:src="@drawable/send_message" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/baseline_send_24" />
     </RelativeLayout>
 
     <androidx.constraintlayout.widget.Guideline

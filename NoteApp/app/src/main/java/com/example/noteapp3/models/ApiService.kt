@@ -66,4 +66,10 @@ interface ApiService {
     @POST("posts")
     fun addPost(@Body post: Post): Call<Void>
 
+    @GET("liveStreams")
+    fun getAllLiveUrls(): Call<List<StreamUrl>>
+
+    @POST("liveStreams")
+    fun addLiveUrl(@Body liveUrl: StreamUrl): Call<Void>
+
 }

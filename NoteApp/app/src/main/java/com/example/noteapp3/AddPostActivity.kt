@@ -30,6 +30,7 @@ import androidx.viewpager.widget.ViewPager
 import com.example.noteapp3.models.AppDatabase
 import com.example.noteapp3.models.Post
 import com.example.noteapp3.models.RetroFitClient
+import com.example.noteapp3.models.StreamUrl
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -54,6 +55,7 @@ class AddPostActivity : AppCompatActivity() {
     private lateinit var db: AppDatabase
     private lateinit var title: EditText
     private lateinit var desc: EditText
+    private lateinit var streamUrl: EditText
     private lateinit var acceptBtn: ImageButton
     private lateinit var cancelBtn: ImageButton
     private lateinit var camera: ImageButton
@@ -62,7 +64,6 @@ class AddPostActivity : AppCompatActivity() {
     private var currentPhotoPath: String? = null
 
     private lateinit var locationSwitch: androidx.appcompat.widget.SwitchCompat
-    private var progressDialog: ProgressDialog? = null
 
     var x = 0.0
     var y = 0.0
@@ -81,6 +82,7 @@ class AddPostActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_post)
         title = findViewById(R.id.title)
         desc = findViewById(R.id.description)
+        streamUrl = findViewById(R.id.live_url)
         acceptBtn = findViewById(R.id.accept_and_post)
         cancelBtn = findViewById(R.id.cancel_button)
         camera = findViewById(R.id.button_take_photo)
@@ -130,7 +132,11 @@ class AddPostActivity : AppCompatActivity() {
             val titleStr = title.text.toString().trim()
             if (titleStr.isEmpty()) {
                 title.error = "Title can't be empty"
-            } else {
+            } else if (desc.text.toString().trim().isEmpty()){
+                desc.error = "Description can't be empty"
+            }
+
+            else{
                 post.authorId = profileId
                 post.title = titleStr
                 post.desc = desc.text.toString().trim()
@@ -147,9 +153,57 @@ class AddPostActivity : AppCompatActivity() {
                 post.imgBase64 = encodeMediaItems(mediaItems)
                 post.x = x
                 post.y = y
-
-                addPost(post)
+                if (streamUrl.text.isBlank()) {
+                    addPost(post)
+                } else {
+                    val url = streamUrl.text.toString()
+                    if (isLiveStreamUrl(url)) {
+                        addStream(url, post)
+                    } else {
+                        // Handle non-live stream URL if necessary, or decide to add the post directly
+                        addPost(post)
+                    }
+                }
             }
+        }
+    }
+
+    fun isLiveStreamUrl(url: String): Boolean {
+        // You can adjust this to match your live stream URL patterns
+        return url.contains("youtube.com/live") || url.contains("youtu.be/live")
+    }
+
+
+    private fun addStream(url: String, post: Post) {
+
+        val apiService = RetroFitClient.apiService
+
+        val link = StreamUrl()
+        link.url = url
+        val call: Call<Void> = apiService.addLiveUrl(link)
+        call.enqueue(object: Callback<Void>{
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    lifecycleScope.launch {
+                        addLiveUrlInApp(link)
+                    }
+                    addPost(post)
+                }
+                else{
+                    Log.e("AddStreamError", "Error: ${response.code()} ${response.message()}")
+                    Toast.makeText(this@AddPostActivity, "Error couldn't add stream", Toast.LENGTH_SHORT).show()
+                }
+            }
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                Toast.makeText(this@AddPostActivity, "Error check connection", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+    }
+
+    private suspend fun addLiveUrlInApp(link: StreamUrl) {
+        withContext(Dispatchers.IO) {
+            db.liveStreamUrlsDao().insert(link)
         }
     }
 

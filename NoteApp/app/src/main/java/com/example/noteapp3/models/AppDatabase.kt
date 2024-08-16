@@ -19,13 +19,15 @@ import com.example.noteapp3.notificationinapp.MessageNotification
 import com.example.noteapp3.polls.Poll
 import retrofit2.http.PUT
 
-@Database(entities = [profile::class, Comment::class, Post::class,Poll::class,MessageNotification::class], version = 2, exportSchema = false)
+@Database(entities = [profile::class, Comment::class, Post::class,Poll::class,MessageNotification::class,StreamUrl::class], version = 2, exportSchema = false)
 @TypeConverters(StringListConverter::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun commentDao(): CommentDao
     abstract fun postDao(): PostDao
     abstract fun pollDao(): PollDao
     abstract fun notificationDao(): NotificationDao
+
+    abstract fun liveStreamUrlsDao(): LiveStreamUrls
 
     companion object {
         @Volatile
@@ -143,5 +145,22 @@ interface NotificationDao{
 
     @Query("DELETE FROM message_notifications")
     suspend fun deleteAllNotifications()
+
+}
+
+@Dao
+interface LiveStreamUrls{
+
+    @Query("SELECT * FROM stream_url")
+    fun getAllUrls():List<StreamUrl>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(url: StreamUrl)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(urls: List<StreamUrl>)
+
+    @Query("DELETE FROM stream_url")
+    fun deleteAllUrls()
 
 }

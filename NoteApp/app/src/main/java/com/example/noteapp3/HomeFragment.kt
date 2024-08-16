@@ -78,7 +78,7 @@ class HomeFragment : Fragment(), PostsAdapter.OnItemClickListener, PostsAdapter.
         recyclerView = view.findViewById(R.id.feed_recycler_view)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        postsAdapter = PostsAdapter(posts, profileId, this, this)
+        postsAdapter = PostsAdapter(requireContext(),posts, profileId, this, this)
         recyclerView.adapter = postsAdapter
 
 

@@ -9,6 +9,7 @@ import com.example.noteapp3.models.AppDatabase
 import com.example.noteapp3.models.Comment
 import com.example.noteapp3.models.Post
 import com.example.noteapp3.models.RetroFitClient
+import com.example.noteapp3.models.StreamUrl
 import com.example.noteapp3.polls.Poll
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -38,6 +39,7 @@ object DataFetcher {
                     }
                 } else {
                     Log.e(TAG, "Response not successful")
+
                     checkAndProceed(context, db, callback)
                 }
             }
@@ -105,6 +107,36 @@ object DataFetcher {
                 checkAndProceed(context, db, callback)
             }
         })
+
+        //fetch and store live streams
+        apiService.getAllLiveUrls().enqueue(object :Callback<List<StreamUrl>>{
+
+
+            override fun onResponse(call: Call<List<StreamUrl>>, response: Response<List<StreamUrl>>) {
+                if (response.isSuccessful) {
+                    val urls = response.body()
+                    urls?.let{
+                        (context as? AppCompatActivity)?.lifecycleScope?.launch {
+                            saveStreamUrlsToDatabase(db,it)
+                            checkAndProceed(context, db, callback)
+                        }
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<StreamUrl>>, t: Throwable) {
+                Log.e(TAG, "Error fetching stream urls", t)
+                Toast.makeText(
+                    context,
+                    "Connection error.\nPlease check your connection",
+                    Toast.LENGTH_SHORT
+                ).show()
+                checkAndProceed(context, db, callback)
+            }
+
+        }
+
+        )
     }
 
     private suspend fun saveCommentsToDatabase(db: AppDatabase, comments: List<Comment>) {
@@ -171,6 +203,14 @@ object DataFetcher {
             Log.d(TAG, "Removed posts not present in server response")
         }
     }
+
+    private suspend fun saveStreamUrlsToDatabase(db: AppDatabase, urls: List<StreamUrl>) {
+        withContext(Dispatchers.IO) {
+            db.liveStreamUrlsDao().insertAll(urls)
+            Log.d(TAG, "Posts saved to database")
+        }
+    }
+
 
     private fun checkAndProceed(context: Context, db: AppDatabase, callback: () -> Unit) {
         (context as? AppCompatActivity)?.lifecycleScope?.launch {

@@ -16,26 +16,29 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.bumptech.glide.Glide
 import com.example.noteapp3.MessagesPage
 import com.example.noteapp3.models.Post
 import com.example.noteapp3.R
-import com.example.noteapp3.RecyclerView.ImagePagerAdapter
 import com.example.noteapp3.ViewPagerAdapter
 import com.example.noteapp3.ViewPagerItem
 import com.example.noteapp3.models.RetroFitClient
 import com.example.noteapp3.models.profile
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import me.relex.circleindicator.CircleIndicator
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.ByteArrayInputStream
-import java.io.ByteArrayOutputStream
 import java.util.Date
 import java.util.Locale
-import java.util.zip.GZIPInputStream
+import com.bumptech.glide.request.target.Target
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class PostsAdapter(
+    private val context: android.content.Context,
     private var posts: MutableList<Post>,
     private val profileId: String,
     private val listener: OnItemClickListener,
@@ -169,9 +172,11 @@ class PostsAdapter(
         // Handle post images and videos
         val imagesAndVideos = post.imgBase64
         if (imagesAndVideos.isNotEmpty()) {
-            val mediaItems = getMediaItems(imagesAndVideos).toMutableList()
-            val adapter = ViewPagerAdapter(mediaItems, holder.itemView.context)
-            holder.viewPager.adapter = adapter
+            GlobalScope.launch(Dispatchers.Main) {
+                val mediaItems = getMediaItems(imagesAndVideos).toMutableList()
+                val adapter = ViewPagerAdapter(mediaItems, holder.itemView.context)
+                holder.viewPager.adapter = adapter
+            }
             holder.indicator.setViewPager(holder.viewPager)
             holder.viewPager.visibility = View.VISIBLE
             holder.indicator.visibility = View.VISIBLE
@@ -250,25 +255,40 @@ class PostsAdapter(
         }
     }
 
-    private fun getMediaItems(imgBase64: List<String>?): List<ViewPagerItem> {
+    private suspend fun getMediaItems(imgBase64: List<String>?): List<ViewPagerItem> {
         if (imgBase64 == null) return emptyList()
 
-        return imgBase64.map { item ->
-            try {
-                if (item.startsWith("vid:")) {
-                    val uri = item.removePrefix("vid:")
-                    ViewPagerItem.VideoItem(Uri.parse(uri))
-                } else {
-                    val decodedBytes = Base64.decode(item, Base64.DEFAULT)
-                    val bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
-                    ViewPagerItem.ImageItem(bitmap ?: Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888))
-                }
-            } catch (e: Exception) {
-                Log.e("MediaItemDebug", "Error processing media item: $item", e)
-                if (item.startsWith("vid:")) {
-                    ViewPagerItem.VideoItem(Uri.EMPTY) // Placeholder or empty URI
-                } else {
-                    ViewPagerItem.ImageItem(Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888))
+        return withContext(Dispatchers.IO) {
+            imgBase64.map { item ->
+                try {
+                    if (item.startsWith("vid:")) {
+                        val uri = item.removePrefix("vid:")
+                        ViewPagerItem.VideoItem(Uri.parse(uri))
+                    } else {
+                        val decodedBytes = Base64.decode(item, Base64.DEFAULT)
+                        val bitmap =
+                            BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+                        val imageItem = if (bitmap != null) {
+                            // Use Glide to load and resize the image
+                            Glide.with(context)
+                                .asBitmap()
+                                .load(bitmap)
+                                .into(
+                                    300, 100
+                                )
+                                .get()
+                        } else {
+                            Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
+                        }
+                        ViewPagerItem.ImageItem(imageItem)
+                    }
+                } catch (e: Exception) {
+                    Log.e("MediaItemDebug", "Error processing media item: $item", e)
+                    if (item.startsWith("vid:")) {
+                        ViewPagerItem.VideoItem(Uri.EMPTY) // Placeholder or empty URI
+                    } else {
+                        ViewPagerItem.ImageItem(Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888))
+                    }
                 }
             }
         }

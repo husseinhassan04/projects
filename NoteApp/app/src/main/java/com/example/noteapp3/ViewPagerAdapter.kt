@@ -12,6 +12,10 @@ import androidx.viewpager.widget.PagerAdapter
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.ui.PlayerView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 sealed class ViewPagerItem {
     data class ImageItem(val bitmap: Bitmap) : ViewPagerItem()
@@ -32,9 +36,12 @@ class ViewPagerAdapter(
         val inflater = LayoutInflater.from(context)
 
         val view = when (item) {
+
             is ViewPagerItem.ImageItem -> {
                 val imageView = inflater.inflate(R.layout.item_post_image, container, false) as ImageView
                 imageView.setImageBitmap(item.bitmap)
+
+
                 imageView.setOnClickListener {
                     PhotoPreviewActivity.imageBitmap = item.bitmap
                     val intent = Intent(context, PhotoPreviewActivity::class.java)
@@ -42,13 +49,18 @@ class ViewPagerAdapter(
                 }
                 imageView
             }
+
             is ViewPagerItem.VideoItem -> {
                 val videoView = inflater.inflate(R.layout.item_post_video, container, false) as PlayerView
-                val exoPlayer = ExoPlayer.Builder(context).build()
-                videoView.player = exoPlayer
-                exoPlayer.setMediaItem(MediaItem.fromUri(item.uri))
-                exoPlayer.prepare()
-                //exoPlayer.playWhenReady = true
+
+
+                    val exoPlayer = ExoPlayer.Builder(context).build()
+                    videoView.player = exoPlayer
+                    exoPlayer.setMediaItem(MediaItem.fromUri(item.uri))
+                    exoPlayer.prepare()
+
+                    // exoPlayer.playWhenReady = true
+
 
                 videoView.setOnClickListener {
                     val intent = Intent(context, VideoPreviewActivity::class.java).apply {
@@ -63,6 +75,7 @@ class ViewPagerAdapter(
         container.addView(view)
         return view
     }
+
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         if (items[position] is ViewPagerItem.VideoItem) {

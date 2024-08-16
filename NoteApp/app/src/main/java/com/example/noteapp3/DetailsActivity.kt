@@ -96,7 +96,6 @@ class DetailsActivity : AppCompatActivity() {
 
 
 
-
         //get list of comments ids from extra
         val commentIds = intent.getStringArrayListExtra("comment_ids") ?: emptyList<String>()
         loadComments(commentIds)
@@ -119,6 +118,7 @@ class DetailsActivity : AppCompatActivity() {
                 //add the comment to the list of comments in the post
                 post.comments.add(comment.id)
                 updatePost(post)
+
             }
         }
     }
@@ -207,10 +207,14 @@ class DetailsActivity : AppCompatActivity() {
             val commentDao = db.commentDao()
 
             commentDao.addComment(comment)
-            comments.add(comment)
-
+            withContext(Dispatchers.Main) {
+                comments.add(comment)
+                commentsAdapter.notifyItemInserted(comments.size - 1)
+                setRecyclerViewHeight()
+            }
         }
     }
+
 
     private fun updatePost(post: Post) {
         val apiService = RetroFitClient.apiService
