@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
+
+    <!-- Wishlist Heart Button -->
+    <ImageButton
+        android:id="@+id/wishlist_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:scaleType="fitCenter"
+        android:background="?attr/selectableItemBackground"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/icon_wishlist"
+        android:layout_marginTop="5dp"
+        android:contentDescription="add_to_wishlist" />
+
+    <!-- Cover Photo -->
+    <ImageView
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/back_button"
+        android:src="@drawable/no_book"
+        />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cover"
+        android:text="Book Title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp" />
+
+    <!-- Author -->
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:text="Author Name"
+        android:textSize="18sp"
+        android:textColor="@android:color/darker_gray" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/author"
+        android:textColor="@color/black"
+        android:text="Book Description"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Price -->
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description"
+        android:text="Price: $XX.XX"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp" />
+
+    <!-- Add to Cart Button -->
+    <Button
+        android:id="@+id/addToCartButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Add to Cart"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>

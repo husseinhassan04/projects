@@ -1,0 +1,69 @@
+<!-- res/layout/fragment_cart.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- Layout for logged-in users -->
+    <LinearLayout
+        android:id="@+id/logged_in_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- TabLayout styled like an oval button divided in two -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/oval_tab_background"
+                android:layout_margin="16dp"/>
+
+            <!-- ViewPager2 to host fragments for Cart and Wishlist -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- Layout for logged-out users -->
+    <RelativeLayout
+        android:id="@+id/logged_out_layout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:text="Can't access this page \n without loging in."
+            />
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text"
+            android:layout_centerHorizontal="true"
+            android:text="Login"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+</LinearLayout>

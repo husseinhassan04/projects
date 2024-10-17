@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "849214433406",
+    "project_id": "kitabi-d0766",
+    "storage_bucket": "kitabi-d0766.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849214433406:android:e42c0b2e6b31133af3102f",
+        "android_client_info": {
+          "package_name": "com.example.kitabi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOf9JKj7el7uh5lkz9lRhPCkFtokqUw68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849214433406:android:dadf306145f7e612f3102f",
+        "android_client_info": {
+          "package_name": "com.example.kitabi2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOf9JKj7el7uh5lkz9lRhPCkFtokqUw68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

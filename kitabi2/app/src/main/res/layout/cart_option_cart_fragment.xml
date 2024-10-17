@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/cart_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cart Items"
+        android:textSize="20sp"
+    android:layout_marginBottom="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/cart_content"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"/>
+
+    <Button
+        android:id="@+id/check_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proceed to Checkout"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

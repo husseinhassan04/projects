@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Kitabi2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">#B81D1D</item>
+        <item name="android:windowBackground">@android:color/white</item> <!-- Or your preferred background -->
+
+    </style>
+
+    <style name="Theme.Kitabi2" parent="Base.Theme.Kitabi2" />
+</resources>

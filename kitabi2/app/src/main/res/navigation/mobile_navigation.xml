@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_catalog">
+
+    <fragment
+        android:id="@+id/navigation_catalog"
+        android:name="com.example.kitabi2.ui.catalog.CatalogFragment"
+        android:label="Catalog"
+        tools:layout="@layout/fragment_catalog" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.kitabi2.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.example.kitabi2.ui.cart.CartFragment"
+        android:label="Shopping Cart"
+        tools:layout="@layout/fragment_cart" />
+</navigation>

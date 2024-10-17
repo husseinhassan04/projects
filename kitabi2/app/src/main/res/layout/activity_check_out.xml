@@ -1,0 +1,76 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white"
+    android:padding="16dp"
+    tools:context=".ui.cart.CheckOutActivity">
+
+    <!-- Order Summary -->
+    <TextView
+        android:id="@+id/cart_summary_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Summary"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp"/>
+
+    <!-- Total Price -->
+    <TextView
+        android:id="@+id/total_price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Price: $0.00"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Payment Method Label -->
+    <TextView
+        android:id="@+id/payment_method_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Payment Information"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Stripe Payment Form (Using CardInputWidget) -->
+    <com.stripe.android.view.CardInputWidget
+        android:id="@+id/stripe_card_input_widget"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Checkout Button (Proceed to Payment) -->
+    <Button
+        android:id="@+id/checkout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proceed to Payment"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

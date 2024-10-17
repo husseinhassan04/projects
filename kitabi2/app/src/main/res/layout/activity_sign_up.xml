@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/kitabi_logo"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/sign_up_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="50dp"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:background="@drawable/rounded_edittext"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:background="@drawable/rounded_edittext" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="50dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:layout_marginTop="20dp"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:background="@drawable/rounded_edittext" />
+
+    <EditText
+        android:id="@+id/confirm_password"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="50dp"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_edittext" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center">
+
+        <!-- Circular Profile ImageView -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="Profile Picture"
+            android:src="@drawable/profile_icon" />
+
+        <!-- Edit Icon (Pencil) -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/uploadButton"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignEnd="@+id/profile_image"
+            android:contentDescription="Edit Profile Picture"
+            android:padding="8dp"
+            android:src="@drawable/edit_icon" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/sign_up_button"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="50dp"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginTop="20dp"
+      />
+
+</LinearLayout>

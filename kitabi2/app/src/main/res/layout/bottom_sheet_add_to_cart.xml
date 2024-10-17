@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <!-- Title of the Bottom Sheet -->
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add to Cart"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/black" />
+
+        <!-- Quantity Selector -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp">
+
+            <!-- Minus Button -->
+            <ImageButton
+                android:id="@+id/btn_decrease"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?selectableItemBackground"
+                android:src="@drawable/icon_minus"
+                android:contentDescription="Decrease Quantity" />
+
+            <!-- Quantity Display -->
+            <TextView
+                android:id="@+id/quantity_text"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+
+            <!-- Plus Button -->
+            <ImageButton
+                android:id="@+id/btn_increase"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?selectableItemBackground"
+                android:src="@drawable/icon_plus"
+                android:contentDescription="Increase Quantity" />
+        </LinearLayout>
+
+        <!-- Add to Cart Button -->
+        <Button
+            android:id="@+id/add_to_cart_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add to Cart"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
