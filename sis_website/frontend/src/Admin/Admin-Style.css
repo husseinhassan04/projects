@@ -1,0 +1,58 @@
+body{
+  
+  background: #022d81;
+}
+
+#admin-feed {
+  background: #022d81;
+}
+
+#admin-feed .navbar {
+  background-color: aliceblue !important;
+}
+
+#admin-feed .container {
+  margin-top: 120px !important;
+}
+
+#admin-feed .custom-card {
+  background-color: aliceblue !important;
+  border: #ffffff;
+  border-radius: 10px;
+  border-width: 2px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#admin-feed .custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+#admin-feed .custom-card-img {
+  width: 60%;
+  background-color: transparent;
+  height: 150px;
+  margin: 15px auto 0;
+  padding: 10px;
+  display: block;
+}
+
+#admin-feed .card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration-line: underline;
+}
+
+#admin-feed .card-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  white-space: pre-line; /* Preserve line breaks */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #student-feed .custom-card {
+    height: 280px;
+    margin: 10px auto;
+  }
+}

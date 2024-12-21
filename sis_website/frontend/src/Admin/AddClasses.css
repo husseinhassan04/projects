@@ -1,0 +1,191 @@
+
+#add-classes-body .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  #add-classes-body h2 {
+    font-size: 2rem;
+    color: #f4ecec;
+    font-weight: bold;
+  }
+  
+  #add-classes-body .text-center button {
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  #add-classes-body .text-center button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  #add-classes-body .card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #add-classes-body .card p {
+    margin-bottom: 0;
+  }
+  
+  #add-classes-body .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  #add-classes-body label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  #add-classes-body input,
+  textarea,
+  select {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.75rem;
+    width: 100%;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  #add-classes-body input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  #add-classes-body button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #add-classes-body button[type="submit"]:hover {
+    background-color: #218838;
+  }
+  
+  #add-classes-body .chip {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  #add-classes-body .chip span {
+    margin-right: 8px;
+  }
+  
+  #add-classes-body .chip button {
+    background-color: transparent;
+    border: none;
+    color: #d9534f;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 5px;
+  }
+  
+  #add-classes-body .chip button:hover {
+    color: #c82333;
+  }
+  
+  #add-classes-body .select-wrapper {
+    margin-top: 10px;
+  }
+  
+  #add-classes-body select {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+  }
+  
+  #add-classes-body select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  #add-classes-body .select-wrapper select option {
+    padding: 8px;
+  }
+  
+  #add-classes-body .form-group .d-flex {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  /* Container for selected prerequisites */
+  #add-classes-body .selected-prerequisites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* Individual prerequisite badge */
+#add-classes-body .prerequisite-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  padding: 8px 12px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+#add-classes-body .prerequisite-badge:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button for prerequisite badge */
+#add-classes-body .prerequisite-badge span {
+  margin-left: 8px;
+  color: #ff4d4d;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#add-classes-body .prerequisite-badge span:hover {
+  color: #ff0000;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+  
+  @media (max-width: 768px) {
+    .form-group {
+      margin-bottom: 1rem;
+    }
+  
+    button[type="submit"] {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  
+    .container {
+      padding: 15px;
+    }
+  }
+  

@@ -1,0 +1,96 @@
+/* ManageClasses.css */
+
+/* General Styles */
+#modify_courses .container {
+    max-width: 900px;
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Title */
+#modify_courses h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ffffff !important;
+}
+
+/* Course Item */
+#modify_courses .course-item {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#modify_courses .course-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Course Info Section */
+#modify_courses .course-info {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#modify_courses .course-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #34495e;
+}
+
+#modify_courses .course-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #7f8c8d;
+}
+
+#modify_courses .course-info strong {
+    color: #34495e;
+}
+
+/* Action Buttons */
+#modify_courses .btn {
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+#modify_courses .btn:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+#modify_courses .btn-outline-warning {
+    border-color: #f39c12;
+    color: #f39c12;
+}
+
+#modify_courses .btn-outline-danger {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+#modify_courses .btn-outline-warning:hover {
+    background-color: #f39c12;
+}
+
+#modify_courses .btn-outline-danger:hover {
+    background-color: #e74c3c;
+}
+
+/* Alerts */
+#modify_courses .alert {
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+/* Spacing between courses */
+#modify_courses .course-item {
+    margin-bottom: 20px;
+}
+
+/* Centered no courses message */
+#modify_courses .text-center {
+    font-size: 1.2rem;
+    color: #95a5a6;
+}

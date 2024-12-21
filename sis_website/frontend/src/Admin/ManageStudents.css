@@ -1,0 +1,92 @@
+/* Custom Styling for the Manage Students Component */
+
+
+
+/* #manage-students {
+    background-color: #1e2a47;
+  } */
+  
+  #manage-students .container {
+    color: #ffffff;
+  }
+  
+  #manage-students h2, h4 {
+    color: #ffffff;
+  }
+  
+  #manage-students .table {
+    background-color: #2a3d66;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  #manage-students th, td {
+    text-align: center;
+  }
+  
+  #manage-students th {
+    background-color: #030b13;
+    color: #ffffff;
+  }
+  
+  #manage-students tr:hover {
+    background-color: #1c2a47;
+  }
+  
+  #manage-students .search-box {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  #manage-students .search-box:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  #manage-students .btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  
+  #manage-students .btn-success {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  #manage-students .btn-success:hover {
+    background-color: #0056b3;
+  }
+  
+  #manage-students .btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+  }
+  
+  #manage-students .btn-danger:hover {
+    background-color: #c0392b;
+  }
+  
+  #manage-students .list-group-item {
+    background-color: #34495e;
+    color: #ffffff;
+  }
+  
+  #manage-students .list-group-item .btn {
+    margin-left: 10px;
+  }
+  
+  #manage-students .list-group-item:hover {
+    background-color: #2c3e50;
+  }
+  
+  #manage-students input[type="text"] {
+    border-radius: 5px;
+  }
+  
+  #manage-students input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  

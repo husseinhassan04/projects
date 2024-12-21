@@ -1,0 +1,78 @@
+
+
+/* #weekly_schedule{
+    
+    background-color: #f5f5f5;
+} */
+ .schedule-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin: 20px;
+    background: #022d81;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #weekly_schedule .rbc-calendar {
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  #weekly_schedule .rbc-header {
+    background-color: #ffffff;
+    color:  #022d81;
+    font-weight: bold;
+  }
+  
+  #weekly_schedule .rbc-event {
+    background-color: #ffffff;
+    color:  #022d81;
+    border-radius: 4px;
+  }
+  
+  #weekly_schedule .rbc-day-slot {
+    background-color: #fafafa;
+  }
+  
+  #weekly_schedule .rbc-time-slot {
+    background-color: #e8e8e8;
+  }
+  
+  #weekly_schedule .rbc-toolbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    color:  #022d81;;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  #weekly_schedule .rbc-toolbar button {
+    background-color: #fff;
+    color: #3f51b5;
+    border: 1px solid #3f51b5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #weekly_schedule .rbc-toolbar button:hover {
+    background-color: #3f51b5;
+    color:  #022d81;
+  }
+  
+  #weekly_schedule .rbc-day {
+    font-weight: normal;
+  }
+  
+  #weekly_schedule .rbc-day:hover {
+    background-color:  #022d81;
+  }
+  
+  #weekly_schedule .rbc-time-view {
+    font-size: 12px;
+    font-weight: lighter;
+  }
+  

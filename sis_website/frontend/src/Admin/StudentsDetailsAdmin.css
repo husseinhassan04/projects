@@ -1,0 +1,129 @@
+/* Main container with a dark background gradient */
+#manage-students .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #0951afa4, #cfd7df); /* Dark gradient */
+    color: #e0e0e0; /* Light text color */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Student details card */
+  #manage-students .student-details-card {
+    background: rgb(3, 7, 132); /* Semi-transparent light background */
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Header styling */
+  #manage-students .student-header h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff; /* White for better visibility */
+  }
+  
+  /* Enrollment section */
+  #manage-students .enrollment-section h5 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #f1f1f1; /* Lighter text for headings */
+  }
+  
+  #manage-students .course-list {
+    margin-top: 20px;
+    color: #000000;
+  }
+  
+  #manage-students .course-card {
+    background: rgba(255, 255, 255, 0.885); /* Lighter card background */
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  #manage-students .course-info {
+    max-width: 75%;
+  }
+  
+  #manage-students .course-details {
+    font-size: 0.9rem;
+    color: #1d1b1b;
+  }
+  
+  #manage-students .btn {
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button colors */
+  #manage-students .btn-success {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  #manage-students .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  #manage-students .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  #manage-students .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  /* Enroll section */
+  #manage-students .enroll-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  #manage-students h5{
+    margin-top: 10px;
+  }
+  
+  #manage-students .input-course-id {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #000000;
+    background-color: #f9f8f8;
+    color: #141010;
+    width: 50%;
+    margin-right: 10px;
+  }
+  
+  #manage-students .input-course-id::placeholder {
+    color: #888; /* Lighter placeholder text */
+  }
+  
+  #manage-students .loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #f1f1f1;
+  }
+  
+  /* Alert box styles */
+  #manage-students .alert {
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: #f39c12;
+    color: white;
+  }
+  

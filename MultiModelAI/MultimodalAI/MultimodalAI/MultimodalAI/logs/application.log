@@ -1,0 +1,19 @@
+2024-12-07 17:21:36,225 - INFO - Logging setup complete. Writing logs to logs/application.log
+2024-12-07 17:21:40,184 - INFO - Starting Flask application...
+2024-12-07 17:21:40,193 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-07 17:21:43,063 - INFO - Logging setup complete. Writing logs to logs/application.log
+2024-12-07 17:21:46,888 - INFO - Starting Flask application...
+2024-12-07 17:21:46,893 - WARNING -  * Debugger is active!
+2024-12-07 17:21:46,896 - INFO -  * Debugger PIN: 361-303-416
+2024-12-07 17:21:46,970 - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-12-07 17:21:49,752 - INFO - 127.0.0.1 - - [07/Dec/2024 17:21:49] "GET / HTTP/1.1" 200 -
+2024-12-07 17:21:50,899 - INFO - 127.0.0.1 - - [07/Dec/2024 17:21:50] "GET /video_feed HTTP/1.1" 200 -
+2024-12-07 17:21:51,001 - INFO - 127.0.0.1 - - [07/Dec/2024 17:21:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-12-07 17:22:07,148 - INFO - Listening for speech...
+2024-12-07 17:22:13,156 - WARNING - Could not understand the audio.
+2024-12-07 17:22:13,158 - INFO - 127.0.0.1 - - [07/Dec/2024 17:22:13] "GET /speech HTTP/1.1" 200 -
+2024-12-07 17:22:14,918 - INFO - Listening for speech...
+2024-12-07 17:22:19,357 - INFO - Recognized command: how are you
+2024-12-07 17:22:19,393 - INFO - 127.0.0.1 - - [07/Dec/2024 17:22:19] "GET /speech HTTP/1.1" 200 -
+2024-12-07 17:22:21,402 - INFO - 127.0.0.1 - - [07/Dec/2024 17:22:21] "[33mPOST /detect HTTP/1.1[0m" 404 -
+2024-12-07 17:22:42,340 - INFO - 127.0.0.1 - - [07/Dec/2024 17:22:42] "[33mPOST /detect HTTP/1.1[0m" 404 -

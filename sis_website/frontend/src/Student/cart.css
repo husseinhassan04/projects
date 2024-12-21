@@ -1,0 +1,56 @@
+.CartBody {
+    background-color: #003366; /* Navy blue */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-light {
+    color: #f9f9f9; /* Light color for contrast */
+}
+
+.course-card {
+    background-color: #e6f2ff; /* Light blue */
+    border: none;
+    border-radius: 10px;
+}
+
+.course-card .card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.course-card .card-text {
+    font-size: 0.95em;
+}
+
+.btn-danger {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+.btn-danger:hover {
+    background-color: #ff4d4d;
+    border-color: #ff4d4d;
+}
+
+.btn-success {
+    background-color: #008000;
+    border-color: #008000;
+}
+
+.btn-success:hover {
+    background-color: #00b300;
+    border-color: #00b300;
+}
+
+.btn-light {
+    color: #003366;
+}
+
+.alert-info {
+    background-color: #003366;
+    border-color: #e6f2ff;
+    color: #e6f2ff;
+}

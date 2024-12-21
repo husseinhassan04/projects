@@ -1,0 +1,3 @@
+C:\Users\Lenovo\projects\sis_website\backend\Sis_Nodejs\Sis_Nodejs\obj\Debug\Sis_Nodejs.njsproj.AssemblyReference.cache
+C:\Users\Lenovo\projects\sis_website\backend\Sis_Nodejs\Sis_Nodejs\obj\Debug\Sis_Nodejs.njsproj.CoreCompileInputs.cache
+C:\Users\Lenovo\projects\sis_website\backend\Sis_Nodejs\Sis_Nodejs\bin\Microsoft.NodejsTools.WebRole.dll
